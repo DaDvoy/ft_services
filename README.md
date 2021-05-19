@@ -11,6 +11,19 @@
 
 ***----***
 
+**Docker**
+
+Узнать ID контейнера:
+
+ - docker ps
+
+Узнать IP контейнера:
+
+ - docker inspect service_name | grep "IPAddress"
+ service_name - ID контейнера
+ IPAddress - так и пишется, ничего не нужно вставлять
+ 
+***---***
 
 **WordPress:**
 
