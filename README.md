@@ -1,5 +1,17 @@
 # ft_services
 
+***FIRST STEP***
+
+1) install brew - "curl -fsSL https://rawgit.com/kube/42homebrew/master/install.sh | zsh"
+2) "brew install minikube"
+3) mv .brew/.minikube ./goinfre
+4) ln -s ./goinfre/.minikube .minikube
+5) ln -s ./goinfre/.brew .brew
+
+
+***----***
+
+
 **WordPress:**
 
 *php-soap* --- Simple Object Access Protocol(SOAP) — простой протокол доступа к объектам -  протокол обмена структурированными сообщениями в распределённой вычислительной среде. Первоначально SOAP предназначался в основном для реализации удалённого вызова процедур (RPC). Сейчас протокол используется для обмена произвольными сообщениями в формате XML, а не только для вызова процедур.
