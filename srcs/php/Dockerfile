@@ -12,9 +12,9 @@ RUN mkdir -p var/www/dadvoy
 RUN mkdir -p /run/nginx
 RUN mv phpMyAdmin-5.0.4-all-languages /var/www/dadvoy/phpMyAdmin
 
-COPY /src/config.inc.php ./var/www/dadvoy/phpMyAdmin
-COPY /src/supervisord.conf ./etc/supervisord.conf
-COPY /src/nginx_php.conf ./etc/nginx/conf.d/default.conf
+COPY ./src/config.inc.php ./var/www/dadvoy/phpMyAdmin
+COPY ./src/supervisord.conf ./etc/supervisord.conf
+COPY ./src/nginx_php.conf ./etc/nginx/conf.d/default.conf
 
 EXPOSE 5000
 

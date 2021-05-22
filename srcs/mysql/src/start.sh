@@ -28,7 +28,7 @@ rc-service mariadb stop
 
 #Импорт ранее созданной резервной копии базы данных на сервер
 #mysql -u root wordpress < wp.sql
-#mysql -u root mysql < mybase
+mysql -u root mysql < mybase
 
 #./etc/init.d/mariadb stop
 #/usr/bin/mysqld --user=root --datadir=/var/lib/mysql

@@ -4,7 +4,7 @@ RUN apk update && apk upgrade
 RUN apk add nginx openssl
 #openssh supervisor
 
-COPY    ./src/nginx.conf /etc/nginx/conf.d/default.conf
+COPY    ./src/nginx.conf ./etc/nginx/conf.d/default.conf
 #COPY    ./src/supervisord.conf /etc/supervisord.conf
 RUN     mkdir -p /run/nginx
 
