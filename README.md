@@ -30,6 +30,22 @@
  
 ***---***
 
+**InfluxDB - Telegraf - Grafana***
+
+![tick-stack-diagram](https://user-images.githubusercontent.com/73754164/119744500-d4d38000-be94-11eb-982c-0071789dc61c.png)
+
+Называют они этот стек технологий TICK stack - по первым буквам (Telegraf, Influxdb, Chronograf, Kapacitor).
+
+В рамках этого поста мы упрощаем эту схему и она принимает следующий вид:
+
+![influxdata_tick-2](https://user-images.githubusercontent.com/73754164/119744578-fe8ca700-be94-11eb-9740-3813310848c0.png)
+
+- query - запрос
+- queues - очереди
+
+
+***---***
+
 **FTPS**
 
 *FTPS* --- FTPS (File Transfer Protocol + SSL, или FTP/SSL) — это расширение широко используемого протокола передачи данных FTP, которое добавляет поддержку для криптографических протоколов уровней транспортной безопасности и защищенных сокетов.
