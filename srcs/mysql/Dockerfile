@@ -7,10 +7,9 @@ RUN apk add mysql mysql-client
 
 COPY ./src/start.sh ./start.sh
 COPY ./src/my.cnf ./etc/my.cnf
-COPY ./src/my.cnf ./etc/mysql/my.cnf
 COPY ./src/mybase ./mybase
 COPY ./src/supervisord.conf ./etc/supervisord.conf
-COPY ./src/wp.sql ./wp.sql
+COPY ./src/wordpress.sql ./wordpress.sql
 
 RUN chmod +x start.sh
 

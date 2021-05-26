@@ -1,11 +1,10 @@
 $!/bin/sh
 #
-#minikube delete
-#minikube start --vm-driver=virtualbox
-#minikube addons enable metallb
-#eval $(minikube docker-env)
+minikube delete
+minikube start --vm-driver=virtualbox
+minikube addons enable metallb
+eval $(minikube docker-env)
 
-#//cd ./srcs
 kubectl apply -f config.yaml
 
 cd mysql
@@ -20,6 +19,10 @@ cd ../php
 
 docker build -t php_image .
 kubectl apply -f php.yaml
+cd ../nginx
+
+docker build -t nginx_image .
+kubectl apply -f nginx.yaml
 cd ../ftps
 
 docker build -t ftps_image .

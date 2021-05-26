@@ -238,7 +238,7 @@ INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`
 (133, '_transient_timeout_dash_v2_88ae138922fe95674369b1cb3d215a2b', '1616969644', 'no'),
 (134, '_transient_dash_v2_88ae138922fe95674369b1cb3d215a2b', '<div class=\"rss-widget\"><p><strong>RSS Error:</strong> XML or PCRE extensions not loaded!</p></div><div class=\"rss-widget\"><p><strong>RSS Error:</strong> XML or PCRE extensions not loaded!</p></div>', 'no'),
 (135, '_site_transient_timeout_community-events-e2f2ed925cc0dc7eddd67ec58c0404fa', '1616969645', 'no'),
-(136, '_site_transient_community-events-e2f2ed925cc0dc7eddd67ec58c0404fa', 'a:4:{s:9:\"sandboxed\";b:0;s:5:\"error\";N;s:8:\"location\";a:1:{s:2:\"ip\";s:10:\"172.17.0.0\";}s:6:\"events\";a:0:{}}', 'no'),
+(136, '_site_transient_community-events-e2f2ed925cc0dc7eddd67ec58c0404fa', 'a:4:{s:9:\"sandboxed\";b:0;s:5:\"error\";N;s:8:\"location\";a:1:{s:2:\"ip\";s:10:\"192.168.99.107\";}s:6:\"events\";a:0:{}}', 'no'),
 (139, 'finished_updating_comment_type', '1', 'yes');
 
 -- --------------------------------------------------------
@@ -411,9 +411,9 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'wp_user_level', '10'),
 (14, 1, 'dismissed_wp_pointers', ''),
 (15, 1, 'show_welcome_panel', '1'),
-(16, 1, 'session_tokens', 'a:2:{s:64:\"c24219b47a88a92ae6e0b939dc85a4467d46fd346d53e1294d182589ffd09955\";a:4:{s:10:\"expiration\";i:1617099243;s:2:\"ip\";s:10:\"172.17.0.1\";s:2:\"ua\";s:121:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36\";s:5:\"login\";i:1616926443;}s:64:\"ff2b3bb47009a050b2bfc93647c905b97e3e989a1895fa0a300b9255b125e38e\";a:4:{s:10:\"expiration\";i:1617099405;s:2:\"ip\";s:10:\"172.17.0.1\";s:2:\"ua\";s:121:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36\";s:5:\"login\";i:1616926605;}}'),
+(16, 1, 'session_tokens', 'a:2:{s:64:\"c24219b47a88a92ae6e0b939dc85a4467d46fd346d53e1294d182589ffd09955\";a:4:{s:10:\"expiration\";i:1617099243;s:2:\"ip\";s:10:\"192.168.99.107\";s:2:\"ua\";s:121:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36\";s:5:\"login\";i:1616926443;}s:64:\"ff2b3bb47009a050b2bfc93647c905b97e3e989a1895fa0a300b9255b125e38e\";a:4:{s:10:\"expiration\";i:1617099405;s:2:\"ip\";s:10:\"190.168.99.107\";s:2:\"ua\";s:121:\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.150 Safari/537.36\";s:5:\"login\";i:1616926605;}}'),
 (17, 1, 'wp_dashboard_quick_press_last_post_id', '4'),
-(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:10:\"172.17.0.0\";}'),
+(18, 1, 'community-events-location', 'a:1:{s:2:\"ip\";s:10:\"192.168.99.107\";}'),
 (19, 2, 'nickname', '123'),
 (20, 2, 'first_name', ''),
 (21, 2, 'last_name', ''),

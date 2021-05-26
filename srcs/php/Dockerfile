@@ -1,6 +1,6 @@
 FROM alpine:3.12
 
-RUN apk update && apk update
+RUN apk update && apk upgrade
 RUN apk add wget nginx supervisor openssl
 RUN apk add --no-cache php7 php7-fpm php7-ldap php7-iconv php7-mbstring php7-mysqli php7-curl php7-gd php7-json \
 php7-soap php7-xml php7-xmlrpc php7-session php7-ctype

@@ -1,10 +1,10 @@
 #!/bin/sh
 
-openrc default
+rc default
 /etc/init.d/mariadb setup
 rc-service mariadb start
-mysql -u root mysql < create_base
-mysql -u root wordpress < wp.sql
+mysql -u root mysql < mybase
+mysql -u root wordpress < wordpress.sql
 rc-service mariadb stop
 /usr/bin/supervisord -c /etc/supervisord.conf
 
@@ -28,7 +28,7 @@ rc-service mariadb stop
 
 #Импорт ранее созданной резервной копии базы данных на сервер
 #mysql -u root wordpress < wp.sql
-mysql -u root mysql < mybase
+#mysql -u root mysql < mybase
 
 #./etc/init.d/mariadb stop
 #/usr/bin/mysqld --user=root --datadir=/var/lib/mysql

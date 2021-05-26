@@ -4,9 +4,9 @@ RUN apk update && apk upgrade
 RUN apk add vsftpd openssl openrc supervisor
 
 # установка OpenSSL - библиотека с расширением SSl(протокол безопасной связи)
-RUN openssl req -newkey rsa:4096 -days 1000 -nodes -x509 -subj \
-	"/C=RU/ST=-/L=KAZAN/O=School21/OU=-/CN=ft_services.ru" \
-	-keyout /etc/ssl/vsftpd.key -out /etc/ssl/vsftpd.crt
+RUN openssl req -newkey rsa:4096 -days 1000 -nodes -x509 \
+	-keyout /etc/ssl/vsftpd.key -out /etc/ssl/vsftpd.crt \
+	-subj "/C=RU/ST=-/L=KAZAN/O=School21/OU=-/CN=ft_services.ru"
 RUN addgroup -S ftps && adduser -S user -G ftps -h /var/www
 
 # Читает файл пар имени пользователя и пароля и обновляет пароли
@@ -17,11 +17,15 @@ RUN	echo "user:user" | chpasswd
 RUN	chown user:ftps /var/www
 
 COPY ./src/vsftpd.conf ./etc/vsftpd/vsftpd.conf
-COPY ./src/supervisord.conf ./etc/supervisord.conf
-
+# COPY ./src/supervisord.conf ./etc/supervisord.conf
+#
 # RUN chmod +x ./etc/vsftpd/vsftpd.conf
+# RUN chmod +x ./etc/supervisord.conf
+# RUN chmod -R 777 ./etc/vsftpd/vsftpd.conf
+
 
 # клиент сообщает порту 21, какой верхний порт открыть: 21000
 EXPOSE 21 21000
 
-CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+# CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
+CMD ["vsftpd", "/etc/vsftpd/vsftpd.conf"]
