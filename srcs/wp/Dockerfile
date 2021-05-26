@@ -14,7 +14,7 @@ RUN mv wordpress /var/www/dadvoy/wordpress
 
 COPY ./src/wp-config.php ./var/www/dadvoy/wordpress
 COPY ./src/supervisord.conf ./etc/supervisord.conf
-COPY ./src/nginx_php.conf ./etc/nginx/conf.d/default.conf
+COPY ./src/nginx_wp.conf ./etc/nginx/conf.d/default.conf
 
 EXPOSE 5050
 

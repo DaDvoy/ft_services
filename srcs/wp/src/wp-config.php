@@ -1,157 +1,94 @@
 <?php
-/* vim: set expandtab sw=4 ts=4 sts=4: */
 /**
- * phpMyAdmin sample configuration, you can use it as base for
- * manual configuration. For easier setup you can use setup/
+ * Основные параметры WordPress.
  *
- * All directives are explained in documentation in the doc/ folder
- * or at <https://docs.phpmyadmin.net/>.
+ * Скрипт для создания wp-config.php использует этот файл в процессе
+ * установки. Необязательно использовать веб-интерфейс, можно
+ * скопировать файл в "wp-config.php" и заполнить значения вручную.
  *
- * @package PhpMyAdmin
- */
-declare(strict_types=1);
-
-/**
- * This is needed for cookie based authentication to encrypt password in
- * cookie. Needs to be 32 chars long.
- */
-$cfg['blowfish_secret'] = 'This5Just7Need9Here_believeMe_I0Know0Better'; /* YOU MUST FILL IN THIS FOR COOKIE AUTH! */
-
-/**
- * Servers configuration
- */
-$i = 0;
-
-/**
- * First server
- */
-$i++;
-/* Authentication type */
-$cfg['Servers'][$i]['auth_type'] = 'cookie';
-/* Server parameters */
-$cfg['Servers'][$i]['host'] = 'mysql-svc';
-$cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['AllowNoPassword'] = false;
-
-/**
- * phpMyAdmin configuration storage settings.
- */
-
-/* User used to manipulate with storage */
-// $cfg['Servers'][$i]['controlhost'] = '';
-$cfg['Servers'][$i]['port'] = '3306';
-$cfg['Servers'][$i]['controluser'] = 'admin';
-$cfg['Servers'][$i]['controlpass'] = 'admin';
-
-/* Storage database and tables */
-// $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
-// $cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
-// $cfg['Servers'][$i]['relation'] = 'pma__relation';
-// $cfg['Servers'][$i]['table_info'] = 'pma__table_info';
-// $cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
-// $cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
-// $cfg['Servers'][$i]['column_info'] = 'pma__column_info';
-// $cfg['Servers'][$i]['history'] = 'pma__history';
-// $cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
-// $cfg['Servers'][$i]['tracking'] = 'pma__tracking';
-// $cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
-// $cfg['Servers'][$i]['recent'] = 'pma__recent';
-// $cfg['Servers'][$i]['favorite'] = 'pma__favorite';
-// $cfg['Servers'][$i]['users'] = 'pma__users';
-// $cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
-// $cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
-// $cfg['Servers'][$i]['savedsearches'] = 'pma__savedsearches';
-// $cfg['Servers'][$i]['central_columns'] = 'pma__central_columns';
-// $cfg['Servers'][$i]['designer_settings'] = 'pma__designer_settings';
-// $cfg['Servers'][$i]['export_templates'] = 'pma__export_templates';
-
-/**
- * End of servers configuration
- */
-
-/**
- * Directories for saving/loading files from server
- */
-$cfg['UploadDir'] = '';
-$cfg['SaveDir'] = '';
-
-/**
- * Whether to display icons or text or both icons and text in table row
- * action segment. Value can be either of 'icons', 'text' or 'both'.
- * default = 'both'
- */
-//$cfg['RowActionType'] = 'icons';
-
-/**
- * Defines whether a user should be displayed a "show all (records)"
- * button in browse mode or not.
- * default = false
- */
-//$cfg['ShowAll'] = true;
-
-/**
- * Number of rows displayed when browsing a result set. If the result
- * set contains more rows, "Previous" and "Next".
- * Possible values: 25, 50, 100, 250, 500
- * default = 25
- */
-//$cfg['MaxRows'] = 50;
-
-/**
- * Disallow editing of binary fields
- * valid values are:
- *   false    allow editing
- *   'blob'   allow editing except for BLOB fields
- *   'noblob' disallow editing except for BLOB fields
- *   'all'    disallow editing
- * default = 'blob'
- */
-//$cfg['ProtectBinary'] = false;
-
-/**
- * Default language to use, if not browser-defined or user-defined
- * (you find all languages in the locale folder)
- * uncomment the desired line:
- * default = 'en'
- */
-//$cfg['DefaultLang'] = 'en';
-//$cfg['DefaultLang'] = 'de';
-
-/**
- * How many columns should be used for table display of a database?
- * (a value larger than 1 results in some information being hidden)
- * default = 1
- */
-//$cfg['PropertiesNumColumns'] = 2;
-
-/**
- * Set to true if you want DB-based query history.If false, this utilizes
- * JS-routines to display query history (lost by window close)
+ * Этот файл содержит следующие параметры:
  *
- * This requires configuration storage enabled, see above.
- * default = false
- */
-//$cfg['QueryHistoryDB'] = true;
-
-/**
- * When using DB-based query history, how many entries should be kept?
- * default = 25
- */
-//$cfg['QueryHistoryMax'] = 100;
-
-/**
- * Whether or not to query the user before sending the error report to
- * the phpMyAdmin team when a JavaScript error occurs
+ * * Настройки MySQL
+ * * Секретные ключи
+ * * Префикс таблиц базы данных
+ * * ABSPATH
  *
- * Available options
- * ('ask' | 'always' | 'never')
- * default = 'ask'
+ * @link https://ru.wordpress.org/support/article/editing-wp-config-php/
+ *
+ * @package WordPress
  */
-//$cfg['SendErrorReports'] = 'always';
+
+// ** Параметры MySQL: Эту информацию можно получить у вашего хостинг-провайдера ** //
+/** Имя базы данных для WordPress */
+define( 'DB_NAME', 'wordpress' );
+
+/** Имя пользователя MySQL */
+define( 'DB_USER', 'admin' );
+
+/** Пароль к базе данных MySQL */
+define( 'DB_PASSWORD', 'admin' );
+
+/** Имя сервера MySQL */
+define( 'DB_HOST', 'mysql-svc' );
+
+// define('WP_HOME', 'http://192.168.99.100:5050');
+//
+// define('WP_SITEURL', 'http://192.168.99.100:5050');
+
+/** Кодировка базы данных для создания таблиц. */
+define( 'DB_CHARSET', 'utf8' );
+
+/** Схема сопоставления. Не меняйте, если не уверены. */
+define( 'DB_COLLATE', '' );
+
+/**#@+
+ * Уникальные ключи и соли для аутентификации.
+ *
+ * Смените значение каждой константы на уникальную фразу.
+ * Можно сгенерировать их с помощью {@link https://api.wordpress.org/secret-key/1.1/salt/ сервиса ключей на WordPress.org}
+ * Можно изменить их, чтобы сделать существующие файлы cookies недействительными. Пользователям потребуется авторизоваться снова.
+ *
+ * @since 2.6.0
+ */
+define('AUTH_KEY',         'H0Y:141m(AJU5+I`{NT=c76#:<hnhu#^rXN13~h+.@@*6=K<V%G}X@7xq(+~{uMn');
+define('SECURE_AUTH_KEY',  '(tv3]kRhkdpC%W$6A}wp1U7+CD@=phW><=;8}fmN??&3^Ui(|. :T3-|NJkJ3<k-');
+define('LOGGED_IN_KEY',    'WuslPqX:NMm)E1w/n=iP:&BvC6uNmLd$ug$[7m!r6+jzt1UZwu#+zB^,LO<+i!Yp');
+define('NONCE_KEY',        '3kG{_BrlvimJjp yBf5X:(y>-?vD4d0sDIW}S8mc[ji9l0T3Ft5:>!qtP:#<y)UG');
+define('AUTH_SALT',        'k$lCOrfBtS_)|=9sO2SFu <P4|!@JmjyQ/vZETo{Bw#2^OPQ)9~wAy`jBtmWTWpt');
+define('SECURE_AUTH_SALT', '+bf%:*ZPE!xkc?z,DI_gt42-*x#V#j1-)7]U-LWqNq-n&l}@)K)tQ{#t?V1R&&Po');
+define('LOGGED_IN_SALT',   '@)}OTn&|No{]]|r.n/$;qU|rwUKqIY&U_kd6SS?S|bZv[?eU c#)P[mhH9,s@<C(');
+define('NONCE_SALT',       '/Uq/7ryUFA@@e*A4^.,0=7kvhgysFH&DRow@B}-U+-Sg{)alwUNC+13s;Q--395Y');
+
+
+/**#@-*/
 
 /**
- * You can find more configuration options in the documentation
- * in the doc/ folder or at <https://docs.phpmyadmin.net/>.
+ * Префикс таблиц в базе данных WordPress.
+ *
+ * Можно установить несколько сайтов в одну базу данных, если использовать
+ * разные префиксы. Пожалуйста, указывайте только цифры, буквы и знак подчеркивания.
  */
+$table_prefix = 'wp_';
 
- $cfg ['TempDir'] = '/var/www/phpmyadmin/tmp';
+/**
+ * Для разработчиков: Режим отладки WordPress.
+ *
+ * Измените это значение на true, чтобы включить отображение уведомлений при разработке.
+ * Разработчикам плагинов и тем настоятельно рекомендуется использовать WP_DEBUG
+ * в своём рабочем окружении.
+ *
+ * Информацию о других отладочных константах можно найти в документации.
+ *
+ * @link https://ru.wordpress.org/support/article/debugging-in-wordpress/
+ */
+define( 'WP_DEBUG', false );
+
+/* Это всё, дальше не редактируем. Успехов! */
+
+/** Абсолютный путь к директории WordPress. */
+if ( ! defined( 'ABSPATH' ) ) {
+	define( 'ABSPATH', __DIR__ . '/' );
+}
+
+/** Инициализирует переменные WordPress и подключает файлы. */
+require_once ABSPATH . 'wp-settings.php';
