@@ -12,10 +12,10 @@ RUN mkdir -p var/www/dadvoy
 RUN mkdir -p /run/nginx
 RUN mv wordpress /var/www/dadvoy/wordpress
 
-COPY ./src/config.wp.php ./var/www/dadvoy/wordpress
+COPY ./src/wp-config.php ./var/www/dadvoy/wordpress
 COPY ./src/supervisord.conf ./etc/supervisord.conf
-COPY ./src/nginx_wp.conf ./etc/nginx/conf.d/default.conf
+COPY ./src/nginx_php.conf ./etc/nginx/conf.d/default.conf
 
-EXPOSE 5000
+EXPOSE 5050
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

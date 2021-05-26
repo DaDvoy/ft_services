@@ -16,6 +16,6 @@ COPY ./src/config.inc.php ./var/www/dadvoy/phpMyAdmin
 COPY ./src/supervisord.conf ./etc/supervisord.conf
 COPY ./src/nginx_php.conf ./etc/nginx/conf.d/default.conf
 
-EXPOSE 5000
+EXPOSE 5050
 
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

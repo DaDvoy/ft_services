@@ -10,7 +10,7 @@ kubectl apply -f config.yaml
 cd mysql
 docker build -t mysql_image .
 kubectl apply -f mysql.yaml
-cd ../wordpress
+cd ../wp
 
 
 docker build -t wp_image .
